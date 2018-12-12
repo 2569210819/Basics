@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM事件</title>
+    <style>
+      #box{
+          width:100px;
+          height: 100px;
+          background: red;
+      }
+    </style>
+</head>
+<body>
+    <div>DOM事件-->鼠标事件</div>
+    <div id="box" onmouseover="Over()" onmousemove="Move()" onmousedown="Down()" onmouseup="Up()" onclick="Click()"  onmouseout="Out()">
+        
+    </div>
+</body>
+<script>
+    // 常用的鼠标事件 onmouseover onmousemove onmousedown onmouseup onmouseout onclick
+
+    // 完成点击事件的过程   onmousedown > onmouseup > onclick
+    function Over(){
+        console.log('over')
+    };
+    function Move() {
+        console.log('move')
+    };
+    function Down(){
+        console.log('down')
+    };
+    function Up() {
+        console.log('up')
+    };
+    function Click() {
+        console.log('click')
+    };
+    function Out() {
+        console.log('out')
+    };
+</script>
+</html>

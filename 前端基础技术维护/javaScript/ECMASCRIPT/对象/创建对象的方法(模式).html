@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+   
+    
+    //  1 通过Object 构造函数创建对象    (缺点:通过一个接口创建对象会出现大量重复代码)
+    var person1=new Object();
+    person1.name='wg';
+    person1.say=function(){
+        console.log('say')
+    } 
+    console.log(person1);
+    // 2,通过字面量创建对象             (缺点:通过一个接口创建对象会出现大量重复代码)
+    var person2={
+        name:'wg',
+        sayName:function(){
+            console.log("sayName")
+        }
+    };
+    console.log(person2)
+    // 3,工厂模式创建对象      (缺点:减少了重复代码，但是不能够识别对象，所有实例都是object类型的。)
+    function createPerson(name,age){
+        var o=new Object();
+        o.name=name;
+        o.age=age;
+        o.sayName=function(){
+            console.log(name)
+        };
+        return o;
+    };
+     var person3 = createPerson('wg',12);
+     var person4 = createPerson('wg4',14)
+     console.log(person3)
+     console.log(person4)   
+     // 4,构造函数模式       (缺点:构造函数的问题是，同一构造函数的不同实例的相同方法是不一样的。)
+     function Person(name,age){
+        this.name=name;
+        this.age=age;
+        this.say=function(){
+            console.log(name)
+        }     
+     };
+     var person5=new Person('wg',15);
+     var person6=new Person('wg',16);
+     console.log(person5,typeof person5)
+     console.log(person6,typeof person6)
+     // 5 原型模式   (缺点 :原型也有它本身的问题，共享的属性值如果是引用类型，一个实例对该属性的修改会影响到其他实例。这正是原型模式很少单独被使用的原因。)
+    // 封装公共的方法和属性
+    function Person2(){
+
+    };
+    Person2.prototype.name='wg';
+    Person2.prototype.age=17;
+    Person2.prototype.say=function(){
+        console.log("原型模式");
+    }
+    var person7=new Person2()
+    var person8=new Person2()
+    console.log(person7.name,person8.name)
+    //6 构造函数和原型模式  (缺点:构造函数模式用于定义实例属性，而原型模式用于定义共享的方法和属性)
+    function Person3(name,age){
+        this.name=name;
+        this.age=age;
+    };
+    Person3.prototype={
+        say:'hello',
+        sayName:function(){
+            console.log('sayName')
+        }
+    };
+    var person9=new Person3('wg',18)
+    var person10=new Person3('wg',19)
+    console.log(person9)
+    console.log(person10)
+    </script>
+</body>
+</html>

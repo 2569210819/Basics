@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rem</title>
+</head>
+<body>
+    <div class="app">
+        rem布局就是根据原型图开发  根据rem.js 进行换算
+    </div>
+</body>
+<script>
+    //一般原型图都是按照750的尺寸是设计的
+     (function (doc, win, undefined) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (clientWidth === undefined) return;
+          docEl.style.fontSize = 10 * (clientWidth / 750) + 'px';
+        };
+      if (doc.addEventListener === undefined) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false)
+    })(document, window);
+</script>
+</html>

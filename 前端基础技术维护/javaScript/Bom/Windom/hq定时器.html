@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时器</title>
+</head>
+
+<body>
+    <input type="button" value="点击开始定时器" onclick="startTimer()">
+    <input type="button" value="点击结束定时器" onclick="endTimer()">
+    <input type="button" value="for循环定时器">
+    <div>拼单倒计时</div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+<script>
+    // setInterval,setTimeout  无限循环  只执行一次
+    let sec = 0;
+    let timer = null;
+    let timeData = ['2018-10-03', '2018-11-05', '2018-12-09']
+    let nowData = '2018-05-29';
+
+    let nowDataTime = new Date(nowData).getTime();
+    let endtimeData=[];
+    for(let i=0;i<timeData.length;i++){
+        endtimeData.push(new Date(timeData[i]).getTime()-nowDataTime);
+    }
+    console.log(endtimeData);
+    function startTimer() {
+        timer = setInterval(function () {
+            sec++;
+            if (sec == 8) {
+                sec=0;
+                clearInterval(timer)
+            }
+            console.log(sec)
+        }, 1000)
+    };
+    function endTimer(){
+        clearInterval(timer)
+    };
+    console.log(nowDataTime)
+    setInterval(function () {
+        
+        for (let i = 0; i < endtimeData.length; i++) {
+            ShowCountDown(endtimeData[i], i);
+            endtimeData[i]=endtimeData[i]-1000;
+        }
+        
+    }, 1000)
+    function ShowCountDown(leftTime, i) {
+
+        var dd = parseInt(leftTime / 1000 / 60 / 60 / 24, 10);//计算剩余的天数
+        var hh = parseInt(leftTime / 1000 / 60 / 60 % 24, 10);//计算剩余的小时数
+        var mm = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟数
+        var ss = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
+        dd = checkTime(dd);
+        hh = checkTime(hh);
+        mm = checkTime(mm);
+        ss = checkTime(ss);//小于10的话加0
+
+        var cc = document.getElementsByTagName('li')[i];
+        cc.innerHTML = "距离拼结束还有：" + dd + "天" + hh + "小时" + mm + "分" + ss + "秒";
+
+    }
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+</script>
+
+</html>

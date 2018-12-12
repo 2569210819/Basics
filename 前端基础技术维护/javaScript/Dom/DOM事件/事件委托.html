@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM 事件  事件委托</title>
+</head>
+<body>
+    <div>DOM事件 --> 事件委托</div>
+    <ui>
+        <li>本来该自己做的事情，委托给别人做。 利用的是事件冒泡原理，使用event.target获取触发事件的目标元素。</li>
+        <li>1- 提高性能，只需要注册一次事件，也方便移除事件。解决事件处理程序过多的问题，在DOM树中尽量最高的层次上添加一个事件处理程序，只指定一个事件处理程序，就可以管理某一类型的所有事件。</li>
+        <li>2- 给动态生成的元素添加事件。可以解决动态生成的子元素绑定不上事件的问题。</li>
+    </ui>
+    <ui id="List">
+        <li><button>0</button></li>
+        <li><button>1</button></li>
+        <li><button>2</button></li>
+    </ui>
+</body>
+<script>
+    let List=document.getElementById('List');
+     List.addEventListener('click',function(e){
+        let ele=e.target||e.srcElement;
+        ele.style.background='red';
+     })
+</script>
+</html>

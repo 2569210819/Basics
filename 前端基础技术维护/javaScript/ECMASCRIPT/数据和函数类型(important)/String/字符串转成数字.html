@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String</title>
+</head>
+<body>
+    <div>将纯数字字符串转换成数字 Number</div>
+    <div>将纯数字字符串转换成数字 Number</div>
+</body>
+    <script>
+       let str='1000.9388';
+       let str2='';
+       let num=Number(str);
+       console.log(typeof str)
+       console.log(typeof num)  
+       console.log(str)  
+       console.log(num)  
+
+       if(str2==''){
+           console.log("空字符串");
+       };
+       if(!str2){
+           console.log('空字符串');
+       };
+       location.search.slice(1).split('&').forEach(function(v){
+           console.log(v.split('=')[0]+'='+decodeURIComponent(v.split('=')[1]))    
+       })
+    </script>
+</html>

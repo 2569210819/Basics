@@ -1,0 +1,2 @@
+js中有六种数据类型，包括五种基本数据类型（Number,String,Boolean,Undefined,Null）,和一种复杂数据类型（Object）。
+函数类型 Function

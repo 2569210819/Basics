@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM事件 事件对象</title>
+    <style>
+        #box{
+            width:200px;
+            height: 200px;
+            background: #000;
+        }
+        #child{
+            width:100px;
+            height: 100px;
+            background: red;
+        }
+        #child2{
+            width:50px;
+            height: 50px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>DOM事件 --> 事件对象 event</div>
+    <ui>
+        <li>在触发DOM上某个事件时，会产生一个事件对象event，这个对象包含着所有事件有关的信息（导致事件的元素、事件的类型、与特定事件相关的信息）</li>
+        <li>所有浏览器都支持Event对象，但支持方式不同</li>
+        <li>IE中的事件对象：window.event</li>
+    </ui>
+    
+    <div id="box" onclick="Box()">
+        <div id="child" onclick="Child()">
+            <div id="child2" onclick="Child2(event)">
+                
+            </div>
+        </div>
+    </div>
+    <a href="www.baidu.com" onclick='A()'>百度一下</a>
+</body>
+<script>
+    function Box(e) {
+        stopPropagation(e);
+        console.log("box")
+    }
+    function Child(e) {   
+        stopPropagation(e);
+        console.log("child")
+    }
+    function Child2() {
+        console.log("child2")
+        stopPropagation(event);
+    }
+    function A() {
+        alert("d")
+        stopDefault(event);
+    }
+    //阻止 事件冒泡
+    function stopPropagation(event){
+        // 非ie
+        console.log(event)
+        if(event&&event.stopPropagation){
+            event.stopPropagation();
+        }else{
+            window.event.cancelBubble=true;
+        }
+    };
+    //阻止 事件的默认行为
+    function stopDefault(event){
+        console.log(event);
+        if(event&&event.preventDefault){
+            event.preventDefault();
+        }else{
+            window.event.returnValue=false;
+        };
+        return false;
+    };
+    // target srcElement     触发事件的元素
+</script>
+</html>

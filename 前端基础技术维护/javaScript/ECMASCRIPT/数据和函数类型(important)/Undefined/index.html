@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>undefined</title>
+</head>
+<body>
+    <div>undefined</div>
+</body>
+ <script>
+    let data={
+        a:undefined
+    };
+    // 首选
+    if(typeof data.a=='undefined'){
+        console.log("undefined")
+    };
+    // 次选
+    if(data.a=='undefined'){
+        console.log('undefined')
+    };
+ </script>
+</html>

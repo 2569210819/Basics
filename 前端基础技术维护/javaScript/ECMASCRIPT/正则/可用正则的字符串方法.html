@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可用正则的字符串方法</title>
+</head>
+<body>
+    <div>可用正则的字符串方法 search match replace split</div>
+</body>
+<script>
+    // search  match replace split
+    // search 接受字符串或者正则 该方法是string对象的一个方法，用来查找第一次匹配的子字符串的位置，如果找到就返回一个number类型的index值，否则返回-1,它返回的只是第一次匹配的位置
+
+    let str='dsdwgewgsdfd';
+    console.log(str.search(/wg/g));
+    
+
+    // replace 接受字符串或者正则  该方法用来将字符串中的某些子串替换为需要的内容，接受两个参数，第一个参数可以为正则或者子字符串，表示匹配需要被替换的内容，第二个参数为被替换的新的子字符串。如果声明为全局匹配则会替换所有结果，否则只替换第一个匹配到的结果。
+
+    let str2='wedfwfgsdfdsswfsdf';
+    console.log(str2.replace(/wf/g,'wg'));
+    console.log(str2)
+
+    //split  接受字符串或者正则
+    let str3="how|old*are    you";
+    let arr=str3.split(/\||\*|\s+/);
+    console.log(arr,str3)
+
+    // match 
+
+    let str4='wgworldfsdfworlddsf';
+    console.log(str4.match(/world/));
+    console.log(str4.match(/world/g));
+</script>
+</html>

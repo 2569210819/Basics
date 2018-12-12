@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改html内容</title>
+</head>
+<body>
+    <h2>修改html内容</h2>
+    <div id="id1">ss</div>
+    <div id="id2">ss</div>
+    <input type="text" id='id3'>
+    <a href="a" id='a'>a标签</a>
+    <a href="a" id='b' style="color:red;font-size:20px">a标签</a>
+</body>
+    <script>
+        //修改内容 表单操作value值，非表单innerHTML innerText
+        document.getElementById('id1').innerHTML='<div>ss<div>';
+        document.getElementById('id2').innerText='id2';
+        document.getElementById("id3").value='id3';
+        // 修改属性
+        document.getElementById("a").href='b';
+        // 修改样式
+        document.getElementById('b').style.color='yellow'
+    </script>
+</html>

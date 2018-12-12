@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date 对象</title>
+</head>
+<body>
+    <div>Date 对象</div>
+    <button onclick="getDate()">获取当前时间</button>
+    <div id='Date'></div>
+    <button onclick="getTime()">获取现在的毫秒数</button>
+    <div id="Time"></div>
+    <button onclick="getTime2()">获取2000年10月1号的毫秒数</button>
+    <div id="Time2"></div>
+    <button onclick="Gap()">计算现在距离2000年10月1号的毫秒数</button>
+    <div id='gapTime'></div>
+    <button onclick="setTime()">设置30天后的标准时间</button>
+    <div id='Date2'></div>
+</body>
+<script>
+    function getDate(){
+        let D=new Date();
+        document.getElementById('Date').innerHTML=D;
+    };
+    function getTime(params) {
+        let T=new Date().getTime();
+        document.getElementById('Time').innerHTML=T;
+    };
+    function getTime2(params) {
+        let T=new Date('2000-10-1');
+        console.log(T);
+        document.getElementById("Time2").innerHTML=T.getTime();
+    };
+    function Gap(params) {
+        let D=new Date().getTime();
+        console.log(D);
+        let T=new Date('2000-10-1').getTime();
+        console.log(T);
+        console.log(D-T);
+        document.getElementById("gapTime").innerHTML=D-T;
+    };
+    function setTime(params) {
+        let D=new Date();
+        let T=30*24*3600*1000;
+        D.setTime(D.getTime()+T);
+        document.getElementById('Date2').innerHTML=D;
+    }
+</script>
+</html>

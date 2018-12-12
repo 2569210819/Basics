@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>迭代方法</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // every some filter forEach map
+    let arr = [1, 3, 45, 5, 76];
+    let arrEvery;
+    let arrSome;
+    let arrFilter;
+    let arrForEach;
+    let arrMap;
+    console.log(typeof arr)
+    //every  每一项都为真时返回true
+    arrEvery = arr.every(function (item, index, array) {
+        return item > 0;
+    })
+    console.log(arrEvery);
+    //some  有一项为true即返回true,不在循环
+    arrSome = arr.some(function (item, index, array) {
+        console.log(index);
+        return item > 1
+    })
+    console.log(arrSome)
+    // filter 满足条件项组成一个新数组
+    arrFilter = arr.filter((item, index, array) => {
+        return item > 5
+    })
+    console.log(arrFilter);
+    //map  对数组的每一项运行指定函数，返回每次函数运行结果组成的新数组；
+    arrMap = arr.map((item, index, array) => {
+        return item * 2
+    })
+    console.log(arrMap);
+    // forEach  对数组进行遍历，相当于for循环  不能用 break return终止循环
+    arrForEach = arr.forEach((item, index, array) => {
+        console.log(index)
+    })
+    //要想使用forEach  应结合try catch ;
+    function arrforeach() {
+        console.log(arr);
+        try {
+            arr.forEach(function (item, index, array) {
+                if (item < 40) {
+                    console.log("dd")
+                } else {
+                    foreach.break = new Error("StopIteration");
+                }
+            })
+        } catch (e) {
+            if (e.message === "foreach is not defined") {
+                console.log("跳出来了?");//
+                return;
+            } else throw e;
+        }
+    }
+    arrforeach();
+</script>
+
+</html>

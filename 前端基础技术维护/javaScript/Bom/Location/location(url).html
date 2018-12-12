@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D</title>
+</head>
+<body>
+    <div>location 对象包括当前url的信息</div>
+    <button onclick="Reload()">reload 重新加载当前文档</button>
+    <button onclick="Assign()">assign 加载新的文档，会保存在历史记录里</button>
+    <button onclick="Replace()">replace 新的文档替换当前的文档，不会保存在历史记录里</button>
+</body>
+<script>
+    let Location=window.location;
+    console.log(Location);
+    console.log(Location.href)   // 返回整个url路径
+    console.log(Location.hash)   //返回从#开始的url部分
+    console.log(Location.search)  // 返回从?开始的url部分
+
+    function Reload(){
+        location.reload(true);  // reload(true) 从服务器拉取  reload() 可能从缓存中拉取
+    };
+    function Assign(url){
+        location.assign(url);
+    };
+    function Replace(url){
+        location.replace(url)
+    };
+
+    
+    // location.hash           改变hash值
+    // location.href           跳转页面
+    // spa 改变页面是操作hash值 location.hash=url;
+
+</script>
+</html>

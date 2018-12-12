@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>焦点事件</title>
+</head>
+<body>
+    <div>DOM 事件--> 焦点事件</div>
+    <form action="" id='myForm'>
+        <input type="text" id='Input' value="1" onfocus='Focus()' onblur='Blur()' onchange="Change()">
+        <input type="text" id='Input2' value="2">
+        <button onclick="Reset()">重置</button>
+        <button onclick="Submit()">提交</button>
+    </form> 
+   
+</body>
+<script>
+    // 焦点事件  >  获取焦点 失去焦点 改变值时 change事件要失去焦点且值发生改变时才能触发
+    
+    function Focus(){
+        console.log("获得焦点");
+    };
+    function Blur() {
+        console.log("失去焦点");
+    };
+    function Change(){
+        console.log("change")
+    };
+    // 虽然能重置表单数据，实际上也要重置其他参数 用处较少
+    function Reset(){
+        document.getElementById("myForm").reset()
+    };
+    function Submit() {
+        document.getElementById('myForm').submit();
+    }
+</script>
+</html>

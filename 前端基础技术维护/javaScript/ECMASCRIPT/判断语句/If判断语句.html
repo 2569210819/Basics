@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if判断语句</title>
+</head>
+<body>
+    <div>if判断语句 == === ! </div>
+</body>
+<script>
+    let data={
+        a:null,
+        b:undefined,
+        c:'',
+        d:false,
+        e:[],
+        f:{},
+        g:'11',
+        h:11,
+        i:NaN
+    };
+    // ==  先进行类型转换 在比较是否相等  只有NaN 不等于 NaN,{}不等于{},[]不等于[];
+    if(data.g==data.h){
+        console.log("相等");
+    };
+    // ===  先比价类型，再比较值是否相等
+    if(data.g===data.h){
+        console.log("不相等");
+    };
+    // ！将变量转换成boolean类型的值  null undefined '' 0 NaN为false
+    if(!data.a){
+        console.log('null');
+    };
+    if(!data.i){
+        console.log('NaN');
+    };
+</script>
+</html>

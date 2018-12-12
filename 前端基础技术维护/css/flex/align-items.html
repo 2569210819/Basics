@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> align-items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box,
+        .box2,
+        .box3,
+        .box4,
+        .box5 {
+            width: 300px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            background: blue;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            width: 50px;
+            height: 100px;
+            background: red;
+            border: 1px solid #ccc;
+        }
+
+        .box {
+            align-items: stretch;
+        }
+
+        .box2 {
+            align-items: flex-start;
+        }
+
+        .box3 {
+            align-items: flex-end;
+        }
+
+        .box4 {
+            align-items: center;
+        }
+
+        .box5 {
+            align-items: baseline;
+        }
+
+
+
+        .box2>.item:nth-child(1) {
+            height: 20px;
+        }
+
+        .box2>.item:nth-child(2) {
+            height: 40px;
+        }
+
+        .box2>.item:nth-child(3) {
+            height: 60px;
+        }
+
+        .box3>.item:nth-child(1) {
+            height: 20px;
+        }
+
+        .box3>.item:nth-child(2) {
+            height: 40px;
+        }
+
+        .box3>.item:nth-child(3) {
+            height: 60px;
+        }
+
+
+        .box4>.item:nth-child(1) {
+            height: 20px;
+        }
+
+        .box4>.item:nth-child(2) {
+            height: 40px;
+        }
+
+        .box4>.item:nth-child(3) {
+            height: 60px;
+        }
+
+
+        .box5>.item:nth-child(1) {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .box5>.item:nth-child(2) {
+            height: 40px;
+        }
+
+        .box5>.item:nth-child(3) {
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- stretch 伸展:未设高度时为父元素的高度；flex-start 起点对齐  flex-end 终点对齐   中点对齐  baseline   项目的第一行文字的基线对齐  -->
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box5">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+
+</html>

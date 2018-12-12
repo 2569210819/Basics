@@ -1,0 +1,7 @@
+1.history 实现前进和后退
+
+ history.pushstate  history.replacestate 怎么触发监听url变化的函数 hashchange 或者 popstate
+
+ https://blog.csdn.net/u012028371/article/details/67636395
+
+ 

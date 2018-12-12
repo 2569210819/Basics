@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>history(浏览历史)</title>
+</head>
+<body>
+    <div>windom.history  用户访问过的url</div>
+    <button onclick="Back()">back</button>
+    <button onclick="Forward()">forward</button>
+    <button onclick="Go(-1)">go(-1)</button>
+    <button onclick="Go(1)">go(1)</button>
+</body>
+<script>
+    let History=window.history;
+    console.log(History)
+    // 后退
+    function Back(params) {
+        window.history.back()
+    };
+    // 前进
+    function Forward(params) {
+        window.history.forward()
+    };
+    //go 可前进和后退 -1 后退 1前进
+    function Go(params) {
+        window.history.go(params)
+    }
+</script>
+</html>

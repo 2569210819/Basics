@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UI事件</title>
+    <style>
+        #box{
+            width:400px;
+            height: 400px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        #Child{
+            height: 500px;
+            width:400px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div>dom事件--> UI事件</div>
+    <div id="box">
+         <div id="Child"></div>
+    </div>
+</body>
+<script>
+    // onload resize scroll
+    //onload 文档加载完成
+
+    let Box=document.getElementById('box');
+
+    window.onload=function(){
+        console.log('加载完成');
+    };
+    // resize 当浏览器窗口改变时
+    window.onresize=function(){
+        console.log("浏览器窗口改变了")
+    };
+    window.onscroll=function(){
+        console.log("window发生了滚动事件");
+    };
+    Box.onscroll=function(){
+        console.log('box 发生了滚动事件')
+    }
+</script>
+</html>

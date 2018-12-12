@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加html</title>
+</head>
+<body>
+    <div id='addHtml'>添加html</div>
+    <div id='addHtml2'>添加html</div>
+</body>
+<script>
+    let pLabel = document.createElement('div');
+    let Text=document.createTextNode('新创建标签的内容');
+    pLabel.appendChild(Text);
+    document.getElementById('addHtml').appendChild(pLabel);
+    document.getElementById('addHtml2').insertBefore(pLabel);
+</script>
+</html>

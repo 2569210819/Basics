@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>align-content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box,
+        .box2,
+        .box3,
+        .box4,
+        .box5,
+        .box6 {
+            width: 400px;
+            height: 400px;
+            background: blue;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .item {
+            width: 300px;
+            height: 50px;
+            background: red;
+            border: 1px solid #ccc;
+        }
+
+        .box {
+            align-content: stretch;
+        }
+
+        .box2 {
+            align-content: flex-start;
+        }
+
+        .box3 {
+            align-content: flex-end;
+        }
+
+        .box4 {
+            align-content: center;
+        }
+
+        .box5 {
+            align-content: space-between;
+        }
+        .box6{
+            align-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div>多根轴线的对齐方式，如果项目只有一条轴线，该属性将不起作用</div>
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box5">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="box6">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+
+</html>

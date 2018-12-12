@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取html</title>
+</head>
+<body>
+    <div id="idSelect">通过id获取元素</div>
+    <div id="idSelect2">通过id获取元素</div>
+    <div class="classSelect">通过class获取元素</div>
+    <div class="classSelect">通过class选择器获取元素</div>
+    <div class="classSelect2">通过class选择器获取元素</div>
+    <div class="classSelect2">通过class选择器获取元素</div>
+    <span>通过tag获取元素</span><br>
+    <input type="text" name='inputName' placeholder="表单名字">
+</body>
+<script>
+    // 通过 id class tag name querySelector querySelectorAll 获取元素   
+    document.getElementById('idSelect').innerHTML='通过id获取元素 成功';
+    document.getElementsByClassName('classSelect')[0].innerHTML='通过class获取元素 成功';
+    document.getElementsByClassName('classSelect')[1].innerHTML='通过class获取元素 成功';
+    document.getElementsByTagName('span')[0].innerHTML='通过tag获取元素 成功';
+    document.getElementsByName('inputName')[0].value='获取表单成功';
+    document.querySelector('#idSelect2').innerHTML='通过id选择器获取元素 成功'
+    document.querySelectorAll('.classSelect2')[0].innerHTML='通过class选择器获取元素 成功'
+    document.querySelectorAll('.classSelect2')[1].innerHTML='通过class选择器获取元素 成功'
+</script>
+</html>

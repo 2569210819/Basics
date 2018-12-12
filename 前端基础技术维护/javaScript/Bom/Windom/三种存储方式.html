@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cookie localStorage sessionStorage</title>
+</head>
+<body>
+    <div>cookie localStorage sessionStorage</div>
+    <div id='Cookie'>
+        <input type="text" id='Account' placeholder="请输入账号" value="">
+        <input type="text" id='Password' placeholder="请输入密码" value="">
+        <button onclick="setCookie()">设置账号密码到cookie中</button>
+        <button onclick="getCookie()">获取cookie中的账号密码</button>
+        <button onclick="deleteCookie()">删除cookie中的账号密码</button><br>
+        <input type="text" id='LocalStorage' placeholder="设置localStorage">
+        <input type="text" id='sessionStorage' placeholder="设置sessionStorage">
+        <button onclick="setLocal()">设置localStorage</button>
+        <button onclick="setSession()">设置sessionStorage</button>
+        <button onclick="getLocal()">获取localStorage</button>
+        <button onclick="getSession()">获取sessionStorage</button>
+        <button onclick="deleteLocal()">删除localStorage</button>
+        <button onclick="deleteSession()">删除sessionStorage</button>
+    </div>
+</body>
+<script>
+    function setCookie(params) {
+        let Account=document.getElementById("Account").value;
+        let Password=document.getElementById("Password").value;
+        if(!Account||!Password){
+            alert("请输入账号密码");
+            return;
+        };
+        let date=new Date();
+        let expires=30;
+        date.setTime(date.getTime()+expires*24*3600*1000);
+        document.cookie='account='+Account+";expires="+date.toUTCString();    
+        document.cookie='password='+Password+";expires="+date.toUTCString();    
+    };
+    function getCookie(params) {
+        let getCookie = document.cookie.replace(/[ ]/g,"");
+        let arr=getCookie.split(';');
+        for(let i=0;i<arr.length;i++){
+            if(arr[0].split('=')[0]=='account'){
+                document.getElementById("Account").value=arr[0].split('=')[1]
+            };
+            if(arr[1].split('=')[0]=='password'){
+                document.getElementById("Password").value=arr[1].split('=')[1]
+            };
+        };
+    }; 
+    function deleteCookie(params) {
+        let date=new Date();
+        date.setTime(date.getTime()-1000);
+        console.log(document.cookie);
+        document.cookie='account=v;'+'expires='+date.toUTCString();
+        document.cookie='password=v;'+'expires='+date.toUTCString();
+        console.log(document.cookie);
+    };
+    function setLocal(params) {
+        let name=document.getElementById('LocalStorage').value;
+        if(name==''){
+            alert('请填入要存储的localStorage');
+            return;
+        };
+        localStorage.setItem('name',name);
+    };
+    function setSession(params) {
+        let age=document.getElementById("sessionStorage").value;
+        if(age==''){
+            alert('请填入要存储的sessionStorage');
+            return;
+        };
+        sessionStorage.setItem('age',age);
+    };
+    function getLocal(params) {
+        if(!localStorage.getItem('name')){
+            alert("没有存入name");
+        };
+        document.getElementById('LocalStorage').value=localStorage.getItem('name');
+    };
+    function getSession(params) {
+        if(!sessionStorage.getItem('age')){
+            alert("没有存入age");
+        };
+        document.getElementById('sessionStorage').value=sessionStorage.getItem('age');
+    };
+    function deleteLocal(){
+        localStorage.removeItem('name');
+    };
+    function deleteSession(){
+        sessionStorage.removeItem('age');
+    };
+</script>
+</html>

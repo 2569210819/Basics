@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //   函数默认参数
+        //  es5 写法
+        function es5fun(num){
+            var num=num||200;
+            console.log(num);
+        }
+        es5fun(0) //200     就会出现问题
+        //es6 写法
+        function es6fun(num=0){
+            console.log(num)
+        }
+        es6fun()  //0
+        es6fun(9)  //9
+    //箭头函数
+           //1,不需要function 关键字
+           // 2，省略return 关键字        尽量不省略， 
+           // 3，继承当前上下文的this
+      //es5  函数写法
+      function es5Top(x){
+           console.log(x)
+      }
+      //es6 函数写法
+      let es6Top=(x=0,y=1)=>{
+            console.log(x,y)
+      } 
+      es5Top();
+      es5Top(1);
+      es6Top();
+      es6Top(1,2);
+      
+</script>
+</html>

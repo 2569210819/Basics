@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>windom常用方法</title>
+</head>
+<body>
+    <div>windom常用方法</div>
+    <button onclick="Alert()">Alert</button>
+    <button onclick="Confirm()">Confirm</button>
+    <button onclick="Prompt()">Prompt</button>
+</body>
+<script>
+    // alert 提示框
+    function Alert(){
+        alert("alert提示框");
+    };
+    // confirm 确认框  点击确定 confirm()返回true 取消返回false
+    function Confirm() {
+        let A=confirm("confirm对话框");
+        if(A){
+            alert('你点击了确定按钮');
+        }else{
+            alert("你点击了取消按钮");
+        };
+    };
+    //prompt 输入框     确定返回 输入的内容，取消返回 null
+    function Prompt(params) {
+        let B=prompt('你今年几岁？','');
+        if(!B){
+            alert('该用户没有输入内容');
+        }else{
+            alert("你的回答是"+B);
+        };
+    }
+</script>
+</html>

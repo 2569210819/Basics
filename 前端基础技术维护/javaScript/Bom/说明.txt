@@ -1,0 +1,1 @@
+BOM是浏览器对象模型，包括浏览器的一些操作，如window.open、window.alert、window.close等

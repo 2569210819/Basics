@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则方法 最常用的方法 test</title>
+</head>
+<body>
+    <div>正则方法</div>
+</body>
+<script>
+    //test        test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false
+    //exec()      检索字符串中指定的值。匹配成功返回一个数组，匹配失败返回null。
+    //compile()   compile() 既可以改变检索模式，也可以添加或删除第二个参数。
+
+    // 会用test即可
+
+    let reg=/wg/;
+    let str='sldfjoskdjfkwgwhlk';
+    let result=reg.test(str);
+    console.log(result);
+</script>
+</html>

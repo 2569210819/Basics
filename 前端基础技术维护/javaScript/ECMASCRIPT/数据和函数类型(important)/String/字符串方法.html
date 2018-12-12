@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>string 常用字符串方法</title>
+</head>
+<body>
+    <div>
+        <button onclick='test()'>测试编码</button>
+    </div>
+</body>
+<script>
+    // charAt(index)                                                                                   获取指定索引的字符       
+    // split(char/reg)                                                                                 按照 - (默认是 ,) 分割字符串转换成数组 操作字符串不会改变原字符串
+    // substr(n,m)  substring(n,m)  slice(n,m)                                                         截取字符串 操作字符串不会改变原字符串
+    // indexOf(str) lastIndexOf(str) search(str/reg)                                                   查找字符串 查到返回索引 查找不到返回-1
+    // encodeURI(url) encodeURIComponent(parameter)  decodeURI(url) decodeURIComponent(parameter)      字符串编码
+    // replace(str/reg,newStr)                                                                         替换字符串  (对原字符串有改变)
+    // match(str/reg)                                                                                  匹配字符串 并返回匹配字符的数组
+    // concat(str1)                                                                                    拼接字符串
+     
+    //search match replace split        
+    
+    let str='www.baidu.com?name=wg&age=18&city=上海';
+    let str1='wanggang';
+    let str2='wanggang';
+
+    console.log(str.charAt(3));
+    console.log(str.substr(3,8));
+    console.log(str.substring(3,8));
+    console.log(str.substr(3));
+    console.log(str.slice(3,8));
+    console.log(str.slice(3));
+    console.log(str.indexOf('name'));
+    console.log(str.lastIndexOf('w'));
+    console.log(str.concat(str1));
+    console.log(encodeURI(str));           // = ? & 不会被编码        适合整个url编码
+    console.log(encodeURIComponent(str));  // 可以看出 = ？ &被编码    适合部分参数的编码 
+
+    console.log(str.split('.'));           // 使用一种字符进行分割
+    console.log(str.split(/\.|\=|\&|\?/)); // 使用正则匹配多种分割方式
+    console.log(str1.replace('g','a'));    // 只会替换第一个字符 
+    console.log(str2.replace(/g/g,'a'));   // 用全局正则会替换全部
+    console.log(str.match('='))            // 用字符串只会匹配一个返回字符  没有匹配到返回null
+    console.log(str.match(/=/g));          // 用全局正则会匹配全局，
+    console.log(str.search('g'));          // 使用字符或者正则都是返回第一个匹配的索引
+    console.log(str.search(/g/g));
+       
+
+    function test(){
+        location.href='字符串转成数字.html?name='+encodeURIComponent('王刚')+'&city='+encodeURIComponent('上海');
+    };
+</script>
+</html>

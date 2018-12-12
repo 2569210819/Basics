@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件捕获与冒泡</title>
+    <style>
+        #box{
+            width:200px;
+            height: 200px;
+            background: red;
+        }
+        #boxChild{
+            width:100px;
+            height: 100px;
+            background: #000;
+        }
+        #boxChild2{
+            width:50px;
+            height: 50px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>DOM 事件--> 事件捕获与冒泡</div>
+    <div id="box" onclick="Box()">
+        <div id="boxChild" onclick='Child()'>
+            <div id="boxChild2" onclick="Child2()"></div>
+        </div>
+    </div>
+</body>
+<script>
+    // IE 是 事件冒泡，火狐（其他） 是 事件捕获; 所有的浏览器都支持冒泡  ie不支持捕获  
+    //blur、focus、load、unload事件 不支持冒泡
+    // 事件冒泡 从内向外 child2 -> child -> box
+    // 事件捕获 从外向内 box -> child -> child2
+
+    // DOM2级 事件流 --> 事件捕获阶段-> 处于目标阶段 -> 事件捕获阶段;
+
+    function Box(){
+        console.log("box")
+    };
+    function Child() {
+        console.log('child')
+    };
+    function Child2() {
+        console.log("child2")
+    };
+</script>
+</html>

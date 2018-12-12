@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Null</title>
+</head>
+<body>
+    <div>Null  判断一个值是否为null</div>
+</body>
+       <script>
+        //   null==null 为true  只有NaN 不等于 NaN,{}不等于{}.[]不等于[];
+          let data={
+                a:null,
+                b:NaN,
+                c:{},
+                d:[],
+                e:'',
+                f:false,
+                g:undefined
+          };
+          //首选
+          if(!data.a){
+             console.log('首选判断Null')
+          };
+          // 次选
+          if(data.a===null){
+              console.log('Null')
+          };
+          if(data.b==NaN){
+              console.log('NaN')
+          };
+          if(data.c=={}){
+              console.log("空对象")
+          };
+          if(data.d==[]){
+              console.log('空数组')
+          };
+          if(data.e==''){
+              console.log('空字符串')
+          };
+          if(data.g==undefined){
+              console.log('undefined')
+          }
+       </script>
+</html>

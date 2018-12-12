@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>windom 定时器</title>
+</head>
+<body>
+    <div>windom定时器 (setInterval clearInterval) </div>
+    <button onclick="openTimer()">开始计时</button>
+    <button onclick="closeTimer()">结束计时</button>
+    <div id="box">0</div>
+    <div>windom延时器 (setTimeout clearTimeout)</div>
+    <button onclick="openTimer2()">延时计数</button>
+    <button onclick="closeTimer2()">结束延时计数</button>
+    <div id="box2">0</div>
+</body>
+<script>
+    // setInterval 会不停的调用函数 知道调用clearInterval()或者窗口关闭
+    // setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。
+    let timer=null;
+    let num=0;
+    function openTimer(){
+        timer=setInterval(function(){
+            num++;
+            document.getElementById('box').innerHTML=num;
+        }, 1000);
+    };
+    function closeTimer() {
+        clearInterval(timer)
+    };
+
+    // setTimeout clearTimeout  
+    // clearTimeout(id)  setTimeout() 返回的 ID 值。该值标识要取消的延迟执行代码块。
+    let timer2=null;
+    let num2=0;
+    function openTimer2() {
+        timer2=setTimeout(function(){
+            num2++;
+            document.getElementById('box2').innerHTML=num2;
+        },3000)
+    };
+    function closeTimer2() {
+        clearTimeout(timer2);
+    };
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>删除html</title>
+</head>
+<body>
+    <div id="box">
+        <div id='id1'>ss</div>
+        <div id='id2'>sd</div>
+    </div>
+</body>
+<script>
+    // 必须指明要删除的元素和其父元素;
+    let Par=document.getElementById("box");
+    let Child=document.getElementById("id1");
+    Par.removeChild(Child);
+</script>
+</html>

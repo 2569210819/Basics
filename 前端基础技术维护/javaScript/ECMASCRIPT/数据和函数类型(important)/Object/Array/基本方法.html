@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //   push pop unshift shift  splice sort reverse  会改变原数组
+    //   join   concat slice                          不会改变原数组
+
+    let arr=[1,3,4];
+    let brr=[3,4,5];
+    // 合并数组 concat
+    console.log(arr,'arr');
+    console.log(brr,'brr');
+    console.log(arr.concat(brr),'concat 方法');
+   
+    // 数组转换成字符串  join
+    console.log(arr.join(''),'join 方法')
+    console.log(arr)
+    // 新增数组成员   push     在数组最后增加    返回修改后的数组长度
+    console.log(arr.push(7),'push 方法')
+    console.log(arr)
+    //删除数组成员  pop        移除数组最后一个， 并返回移除的值
+    console.log(arr.pop(),'pop 方法')
+    console.log(arr)
+    //新增数组成员    unshift  在数组开头增加     返回数组长度
+    console.log(arr.unshift(9),'unshift 方法')
+    console.log(arr)
+    //删除数组成员    shift    在数组开头删除     返回删除的值
+     console.log(arr.shift(),'shift');
+     console.log(arr);
+    //截取数组成员     slice   当有一个参数 截取从这个下标开始到末尾组成一个新数组
+    console.log(arr.slice(1));
+    console.log(arr.slice(1,2))
+    console.log(arr);
+</script>
+</html>

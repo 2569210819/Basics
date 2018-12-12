@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX</title>
+</head>
+<body>
+    <h2>ajax 大致分为四步</h2>
+    <ul>
+        <li>创建XMLHttpRequest对象</li>
+        <li>连接服务器</li>
+        <li>发送请求</li>
+        <li>接受响应数据</li>
+    </ul>
+</body>
+<script>
+    var http=null;
+    if(window.XMLHttpRequest){
+        http=new XMLHttpRequest();
+    }else{
+        http=new ActiveXobject('Microsoft.XMLHTTP');
+    };
+    http.onreadystatechange=function(){
+        if(http.readystate==4){
+            if(http.status==200){
+                alert(http.responseText);
+            }else{
+                alert(http.status)
+            }
+        }
+    };
+    //***************get
+    http.open('get',url+'?name=wg',true);
+    http.send();
+
+    //******************post
+    http.open('post',url,true);
+    http.setRequestHeader('Content-type','application/x-www-form-urlencoded')
+    http.send('name=wg&age=17');
+</script>
+</html>
