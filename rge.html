@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var map, geolocation;
+		//加载地图，调用浏览器定位服务
+		map = new AMap.Map('', {
+			resizeEnable: true
+		});
+		map.plugin('AMap.Geolocation', function() {
+			geolocation = new AMap.Geolocation({
+				enableHighAccuracy: true, //是否使用高精度定位，默认:true
+				timeout: 10000, //超过10秒后停止定位，默认：无穷大
+				buttonOffset: new AMap.Pixel(10, 20), //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+				zoomToAccuracy: true, //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+				buttonPosition: 'RB'
+			});
+
+			map.addControl(geolocation);
+
+			geolocation.getCurrentPosition();
+
+			AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
+			AMap.event.addListener(geolocation, 'error', onError); //返回定位出错信息
+		});
+		//解析定位结果
+		function onComplete(data) {
+			var data = {
+				"province": data.addressComponent.province,
+				"city": data.addressComponent.city,
+				"district": data.addressComponent.district,
+				"is_debug":is_debug
+			};
+			$.ajax({
+				type: "get",
+				url: "https://api.hqwell.net/shop/v2/station",
+				async: true,
+				data: data,
+				success: function(data) {
+					$("#siteImg").css("display", 'none');
+					$("#site").css("display", 'inline-block')
+					app.data = data;
+					for(var i = 0; i < data.length; i++) {
+						if(data[i].is_recommend == 1) {
+							//							$("#addList li").eq(i).find("img").css("display", 'block');
+							app.stationName = data[i].station_name;
+							console.log(app.stationName)
+							CookieUtil.set("stationId", data[i].station_id, cookiedate, "/")
+							CookieUtil.set("stationName", data[i].station_name, cookiedate, "/")
+
+							break;
+						}
+					}
+					console.log(data)
+				},
+				error: function(e) {
+					console.log(e)
+				}
+			});
+
+			//具体的流程未知
+
+		}
+		//解析定位错误信息
+		function onError(data) {
+			console.log(app.stationName)
+			$("#siteImg").css("display", 'none');
+			$("#site").css("display", 'inline-block');
+			console.log(data);
+			//			console.log(app.is_recommend_flag)
+			//			app.is_recommend_flag = true;
+			//			console.log(data);
+		};
+    </script>
+</body>
+</html>
