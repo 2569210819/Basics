@@ -10,18 +10,25 @@
     
 </body>
 <script>    
-    //简单的字符串去重，把aaabbbccc变成abc
+    var str='1133e3rw23rsdfs23423sdfdsrqwed22er3ef23rd3sqwr';
+    var str2='sd2e3y6sddf8f9k3kid9k3d7kek3'
+    // 提取字符串中的数字
+
+    var reg=/\d+/g;
+    console.log(str.match(reg))
+    // 字母+数字  字母长度不限 数字有且只有一个  数字在字母后面
+
+    var reg2=/[A-z]+\d{1}/g;
+    console.log(str.match(reg2));   
+
+    // 字母+数字  字母有且只有一个  数字长度不限 数字在字母的后面
+    var reg3=/[A-z]{1}\d+/g;
+    console.log(str.match(reg3));
+
+    // 字母+数字  字母和数字各有一个，可以组合
+
+    var reg4=/([A-z]\d){3,}/g;
+    console.log(str2.match(reg4));
     
-    var str = "aaabbbbcccc";
-    // var reg = /(\w)\1+/g;
-    var reg=/(\w)\1+/g;
-    var str2 = str.replace(reg,"$1");
-    console.log(str2);
-    //百度面试题,把数字用科学计数法表达10000000000 变为 10.000.000.000
-
-    //转小驼峰  var str = "the-first-name";
-
-    //求非负整数 匹配正整数 非正整数 负整数： 整数 非负浮点数 正浮点数 非正浮点数 负浮点数 浮点数 有数字、26个英文字母组成的字符串
-
 </script>
 </html>
