@@ -29,6 +29,34 @@
 
     var reg4=/([A-z]\d){3,}/g;
     console.log(str2.match(reg4));
+
+
+    //给一个连字符串例如：get-element-by-id转化成驼峰形式。
+    var str5='get-element-by-id';
+    var reg5=/-\w/g;
+    console.log(str5.replace(reg5,function($0){
+        return $0.charAt(1).toUpperCase()
+    }));
+
+    //非零的十进制数字 (有至少一位数字, 但是不能以0开头)  81
     
+    var str6=81;
+    var reg6=/^[1-9][0-9]?$/g;
+    console.log(reg6.test(str6))
+    //匹配一年中的12个月 12
+
+  
+    //匹配用尖括号括起来的以a开头的字符串   <a herf='www.baidu.com'>
+    
+    var str7='<a herf="www.baidu.com">';
+    var reg7=/^<a[^>]+>$/g;
+    console.log(reg7.test(str7))
+
+    //分割数字每三个以一个逗号划分   "12345678901";
+    var str8='12345678901';
+    var reg8=/[0-9]{3}/g;
+    console.log(str8.replace(reg8,function($0){
+        return $0+','
+    }));
 </script>
 </html>

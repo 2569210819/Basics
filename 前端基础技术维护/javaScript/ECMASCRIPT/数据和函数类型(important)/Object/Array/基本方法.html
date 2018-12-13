@@ -12,13 +12,18 @@
 <script>
     //   push pop unshift shift  splice sort reverse   增删改  会改变原数组     
     //   join   concat slice                                  不会改变原数组
-
-
+    //   toString                                      数组转换成字符串 
     let arr=['0','3','2','6'];
     let arr2=[1,4,2,6];
+    let arr3=[1];
     arr.sort(sort);
     function sort(a,b){        //a-b 升序 b-a 降序
         return b-a
     };
+
+    console.log(arr.join());
+    console.log(arr3.join());
+    console.log(arr2.toString())
+    console.log(arr3.toString())
 </script>
 </html>
