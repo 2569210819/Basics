@@ -7,7 +7,8 @@
     <title>正则练习</title>
 </head>
 <body>
-    
+    <input type="number" value="数字" id='num'>
+    <input type="button" value="获取数字" onclick="getNum()">
 </body>
 <script>    
     var str='1133e3rw23rsdfs23423sdfdsrqwed22er3ef23rd3sqwr';
@@ -58,5 +59,49 @@
     console.log(str8.replace(reg8,function($0){
         return $0+','
     }));
+
+    //是否有连续3个数字 
+    var str9='wsdjsdj334i5erg33r';
+    var reg9=/\d{3}/g;
+    console.log(reg9.test(str9));
+
+    //连续2个相同的 数字
+    var str10='sodjfio99343432433r3e';
+    var reg10=/(\d)\1/g;
+    console.log(reg10.test(str10));
+
+    //连续3个相同的数字
+    var str11='sjdofjs99932r23222dfjsd';
+    var reg11=/(\d)\1{2}/g;
+    console.log(reg11.test(str11));
+
+    //连续3个或3个以上 相同的 单词字符
+    var str12='wdsdjfksjdddwedjijdk09ff';
+    var reg12=/(\w)\1{2,}/g;
+    console.log(reg12.test(str12));
+
+    //正整数 (首位不能为0 长度至少为1位)
+    var str131="3383";
+    var str132=933;
+    var reg13=/^[1-9]\d*/g;
+    console.log(reg13.test(str131));
+    console.log(reg13.test(str132));
+
+    function getNum(){
+        let num=document.getElementById('num').value;
+        console.log(num,str131);
+        console.log(reg13.test(str131));
+        console.log(reg13.test(num));
+    };
+    //负整数
+    var str141=123;
+    var str142=-124;
+    var reg14=/^-[1-9]+$/;
+    console.log(reg14.test(str141))
+    console.log(reg14.test(str142))
+
+    //整数
+
+
 </script>
 </html>

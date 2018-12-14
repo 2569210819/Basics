@@ -16,9 +16,16 @@
 
     // 会用test即可
 
-    let reg=/wg/;
     let str='sldfjoskdjfkwgwhlk';
+    let reg=/wg/;
     let result=reg.test(str);
     console.log(result);
+
+    //验证正整数
+    let str2='30394933';
+    let reg2=/^[1-9][0-9]*$/g;
+    console.log(reg2.test(str2),reg2.lastIndex)
+    console.log(reg2.test(str2),reg2.lastIndex)
+    console.log(reg2.test(str2),reg2.lastIndex)
 </script>
 </html>
