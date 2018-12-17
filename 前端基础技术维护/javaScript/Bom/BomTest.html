@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BomTest</title>
+</head>
+<body>
+    <button onclick="Confirm()">confirm</button>
+    <button onclick="Prompt()">询问框</button>
+</body>
+<script>
+    // ************************************ history ******************************************
+    function History(){
+        window.history.forward();
+        window.history.back();
+        window.history.go()
+    };
+
+
+    // ************************************ location ***************************************
+
+    function Location(){
+        location();
+        location.href();
+        location.hash();
+        location.search();
+    }
+
+    // ************************************* windom ****************************************
+    var timer=null;
+    var timer2=null;
+    var num=0;
+    var num2=0;
+    function Timer(){
+        timer=setInterval(function(){
+            console.log(num++);
+        },1000)
+    };
+    function Timer2(){
+        timer2=setTiemout(function(){
+            console.log(num2++);
+        },1000)
+    };
+    function clearTimer(){
+        clearInterval(timer);
+    };
+    function clearTimer2(){
+        clearTimeout(timer2);
+    };
+    
+    function Alert(){
+        alert();
+    };
+
+    function Confirm(){
+        var A=confirm('是否确定？');
+        if(A){
+            alert('你点击了确定按钮');
+        }else{
+            alert('你点击了取消按钮');
+        }
+    };
+    
+    function Prompt(){
+        var B=prompt('你几岁了？');
+        if(!B){
+            alert('你填写答案');
+        }else{
+            alert(B)
+        }
+    };
+
+    
+</script>   
+</html>
