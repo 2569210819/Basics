@@ -7,71 +7,122 @@
     <title>BomTest</title>
 </head>
 <body>
+    <button onclick="History()">history</button>
+    <button onclick="setCookie()">设置cookie</button>
+    <button onclick="getCookie()">获取cookie</button>
+    <button onclick="removeCookie()">移除cookie</button>
+    <button onclick="setLocalstorage()">设置永久存储</button>
+    <button onclick="getLocalstorage()">获取永久存储</button>
+    <button onclick="removeLocalstorage()">移除永久储存</button>
+    <button onclick="setSessionstorage()">设置临时存储</button>
+    <button onclick="getSessionstorage()">获取临时存储</button>
+    <button onclick="removeSessionstorage()">移除临时储存</button>
+    <button onclick="SetInterval()">设置定时器(setInterval)</button>
+    <button id='Num'>0</button>
+    <button onclick="clearInterval()"> 清除定时器(clearInterval)</button>
+    <button id='Num2'>0</button>
+    <button onclick="SetTimeout()">设置定时器(setTimeout)</button>
+    <button onclick="ClearTimeout()">清除定时器(clearTimeout)</button>
+    <button onclick="Alert()">Alert</button>
     <button onclick="Confirm()">confirm</button>
-    <button onclick="Prompt()">询问框</button>
+    <button onclick="Prompt()">prompt</button>
+    <button onclick="Open()">打开新的窗口</button>
 </body>
 <script>
-    // ************************************ history ******************************************
+    // *****************************history
     function History(){
-        window.history.forward();
-        window.history.back();
-        window.history.go()
+        console.log(history.back());
+        console.log(history.forward());
+        console.log(history.go());
+    };
+    function setCookie(){
+        var date=new Date();
+        var expired=30;
+        date.setTime(date.getTime()+30*24*60*60*1000);
+        document.cookie='name=wanggang;expires='+date.toUTCString();
+        document.cookie='age=18;expires='+date.toUTCString();
+    };
+    function getCookie(){
+        var cookie=document.cookie.replace(/\s/g,'');
+        console.log(cookie);
+    };
+    function removeCookie(){
+        var date=new Date();
+        date.setTime(date.getTime()-1000);
+        document.cookie='name=wanggang;expires='+date.toUTCString();
+        document.cookie='age=18;expires='+date.toUTCString();
     };
 
+    function setLocalstorage(){
+        localStorage.setItem('name','wanggang');
+    };
+    function getLocalstorage(){
+        console.log(localStorage.getItem('name'));
+    };
+    function removeLocalstorage(){
+        localStorage.removeItem('name');
+    };
 
-    // ************************************ location ***************************************
+    function setSessionstorage(){
+        sessionStorage.setItem('name','wanggang');
+    };
+    function getSessionstorage(){
+        sessionStorage.getItem('name');
+    };
+    function removeSessionstorage(){
+        sessionStorage.removeItem('name');
+    };  
 
-    function Location(){
-        location();
-        location.href();
-        location.hash();
-        location.search();
-    }
 
-    // ************************************* windom ****************************************
+
+
     var timer=null;
-    var timer2=null;
     var num=0;
-    var num2=0;
-    function Timer(){
+    function SetInterval(){
         timer=setInterval(function(){
-            console.log(num++);
-        },1000)
+            num++;
+            document.getElementById('Num').innerText=num;
+        },1000);
     };
-    function Timer2(){
-        timer2=setTiemout(function(){
-            console.log(num2++);
-        },1000)
-    };
-    function clearTimer(){
+    function clearInterval(){
         clearInterval(timer);
     };
-    function clearTimer2(){
+
+    var timer2=null;
+    var num2=0;
+    function SetTimeout(){
+        timer=setTimeout(function(){
+            num2++;
+            document.getElementById('Num2').innerText=num2;
+        },4000)
+    };
+    function ClearTimeout(){
         clearTimeout(timer2);
     };
-    
-    function Alert(){
-        alert();
-    };
 
+    function Alert(){
+        alert('我是谁');
+    };
     function Confirm(){
         var A=confirm('是否确定？');
         if(A){
-            alert('你点击了确定按钮');
+            alert("已经确定");
         }else{
-            alert('你点击了取消按钮');
-        }
+            alert("已经取消");
+        };
     };
-    
     function Prompt(){
-        var B=prompt('你几岁了？');
+        var B=prompt('你今年多大了？');
         if(!B){
-            alert('你填写答案');
+            alert('请输入年龄');
         }else{
             alert(B)
         }
     };
 
-    
+    function Open(){
+        window.open('https://www.baidu.com','_blank');
+    };
+
 </script>   
 </html>
