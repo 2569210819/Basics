@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition-过渡</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 0.1s linear 1s, height 0.3s ease 1s;
+        }
+
+        .box:hover {
+            width: 200px;
+            height: 200px;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 400px;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            background: #ccc;
+        }
+
+        .row {
+            width: 400px;
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 100px;
+            background-color: red;
+            transition: height 5s;
+        }
+
+        .slide-up {
+           height: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- transition 四个属性 (属性 过度时间 过渡曲线 过渡开始时间) -->
+    <div class='box'>
+        悬浮
+    </div>
+    <button id="toggleSlider">Toggle Slider</button>
+    <div class="row">
+        <div class="slide">随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法随时随地方法</div>
+    </div>
+</body>
+<script>
+    var toggleButton = document.getElementById('toggleSlider'),
+        slide = document.querySelector('.slide');
+
+    toggleButton.addEventListener('click', toggleSlider, false);
+
+    function toggleSlider() {
+        if (slide.classList.contains('slide-up')) {
+            slide.classList.remove('slide-up');
+        } else {
+            slide.classList.add('slide-up');
+        }
+    }
+</script>
+
+</html>

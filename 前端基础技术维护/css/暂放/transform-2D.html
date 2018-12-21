@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform-转换</title>
+    <style>
+        .box,
+        .box2,
+        .box3,
+        .box4,
+        .box5 {
+            width: 50px;
+            height: 50px;
+            background: red;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .box {
+            transform: translate(-20px, -20px)
+        }
+        .box2 {
+            transform:rotate(60deg);
+        }
+        .box3{
+            transform:scale(0.2,0.4)
+        }
+        .box4{
+            transform:skew(20deg,30deg)
+        }
+    </style>
+</head>
+
+<body>
+    <!-- translate  移动 -->
+    <div class="box"></div>
+    <!-- rotate 旋转-->
+    <div class="box2"></div>
+    <!-- scale 缩放 -->
+    <div class="box3"></div>
+    <!--  skew 倾斜-->
+    <div class="box4"></div>
+</body>
+
+</html>

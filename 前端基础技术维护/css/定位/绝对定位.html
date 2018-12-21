@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绝对定位</title>
+    <style type='text/css'>
+        #box{
+            width:100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+        #box1{
+            width:50px;
+            height: 50px;
+            background: blue;
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+        #box2{
+            width:10px;
+            height: 10px;
+            background: red;
+            position:absolute;
+            top:5px;
+            left:5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>设置为绝对定位的元素框从文档流完全删除，并相对于其包含块定位，包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像该元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</h2>
+    <h3>绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。</h3>
+    <h3>相对定位是“相对于”元素在文档中的初始位置，而绝对定位是“相对于”最近的已定位祖先元素，如果不存在已定位的祖先元素，那么“相对于”最初的包含块。</h3>
+
+    <div id="box">
+        <div id="box1">
+            <div id="box2">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

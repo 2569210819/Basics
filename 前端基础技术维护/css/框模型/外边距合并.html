@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>外边距合并</title>
+    <style type='text/css'>
+        #box1{
+            width:100px;
+            height: 100px;
+            border:1px solid red;
+            margin-bottom: 20px;
+        }
+        #box2{
+            width:100px;
+            height: 100px;
+            border:1px solid red;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        #box3{
+            width:100px;
+            height: 100px;
+            border:1px solid #ccc;
+            background: red;
+            margin-top: 50px;
+        }
+        #box31{
+            width:50px;
+            height: 50px;
+            background:blue;
+            margin-top: 40px;
+        }
+        #box4{
+            width:100px;
+            height: 100px;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            background: red;
+        }
+        #box5{
+            width:100px;
+            height: 0;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。</h2>
+    <h2>合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</h2>
+    <h3>场景</h3>
+
+    <ul>
+        <li>当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并</li>
+        <li>当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并</li>
+        <li>自身发生合并。</li>
+        <li>只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。</li>
+    </ul>
+    <div id='box1'></div>
+    <div id="box2"></div>
+    <div id="box3">
+        <div id="box31">
+
+        </div>
+    </div>
+    <div id="box4">
+       
+    </div>
+    <div id="box5">
+
+    </div>
+</body>
+</html>

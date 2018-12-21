@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相对定位</title>
+    <style type='text/css'>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height: 100px;
+            background: red;
+        }
+        #content{
+            width:50px;
+            height: 50px;
+            background: blue;
+            position: relative;
+            top:20px;
+            left:20px;
+        }
+
+        #box2{
+            width:100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>设置为相对定位的元素框会偏移某个距离。元素仍然保持其未定位前的形状，它原本所占的空间仍保留。</h2>
+    <h3>相对定位没有脱离文档流，但移动可能会覆盖其他元素</h3>
+    <h3>对块级元素有效 行内无效</h3>
+    <div id="box">
+        <div id="content"></div>
+    </div>
+    <div id='box2'></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>内边距</title>
+    <style  type='text/css'>
+        #box{
+            width:  400px;
+            height: 400px;
+            border: 1px solid red;
+        }
+        #box p{
+            width:200px;
+            height: 200px;
+            padding: 10%;
+            border: 10px solid royalblue;
+            background: red;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS padding 属性定义元素边框与元素内容之间的空白区域。</h2>
+    <h3>CSS padding 属性定义元素的内边距。padding 属性接受长度值或百分比值，但不允许使用负值。</h3>
+    <h3>前面提到过，可以为元素的内边距设置百分数值。百分数值是相对于其父元素的 width 计算的，这一点与外边距一样。所以，如果父元素的 width 改变，它们也会改变。</h3>
+    <h3>上下内边距与左右内边距一致；即上下内边距的百分数会相对于父元素宽度设置，而不是相对于高度。</h3>
+    <div id='box'>
+        <p></p>
+    </div>
+</body>
+</html>
