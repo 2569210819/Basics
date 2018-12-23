@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>转化成块状的css</title>
+    <style type='text/css'>
+        #display{
+            width:400px;
+            height: 400px;
+            border:1px solid red;
+        }
+        #display span{
+            display: inline-block;
+            background: red;
+        }
+        #float{
+            width:200px;
+            height: 50px;
+            float:left;
+            background: red
+        }
+        #position{
+            clear:left;
+            width:600px;
+            height: 100px;
+            border:1px solid red;
+        }
+        #position span{
+            /* position: relative; */
+            position: absolute;
+            /* position: fixed; */
+            width:100px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>display float position 其中，float position:absolute|fixed 会把元素转换成行内块状</h2>
+    <div id='display'>
+        <span>span</span>
+    </div>
+    <span id="float">
+        float span
+    </span>
+    <div id='position'>
+        <span>span</span>
+    </div>
+</body>
+</html>

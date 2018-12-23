@@ -37,6 +37,21 @@
         #whitespace2{
             white-space:nowrap;
         }
+        #lineGeight{
+            line-height:50px;
+            /* 内联元素line-height会生效，高度依然是元素自身的高度 */
+            background: red;
+        }
+        #one{
+            width:600px;
+            height: 200px;
+            background: red;
+        }
+        #one div{
+            width:1000px;
+            height: 200px;
+            background: darkblue
+        }
     </style>
 </head>
 <body>
@@ -56,5 +71,11 @@
     <h3>处理空白字符</h3>
     <div id='whiteSpace'>保留  空     白   字符 </div>
     <div id="whitespace2">不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行不换行</div>
+    <span id='lineGeight'>span</span>
+    <div id="one">
+        <div></div>
+    </div>
+    <div>上个div的子元素超过父元素的尺寸，但这个div仍然会和紧跟在上个div</div>
+    
 </body>
 </html>

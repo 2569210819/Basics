@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础样式测试</title>
+    <style type='text/css'>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style:none;
+        }
+        li{
+            display: inline;
+            background: red;
+        }
+        #font{
+            font-family:'Courier New', Courier, monospace;
+            font-size:50px;
+            font-style:italic;
+            font-weight:500;
+        }
+        #text{
+            text-align:center;
+            text-decoration:line-through;
+            text-justify:auto;
+            text-indent:10px;
+            word-spacing:10px;
+            letter-spacing:10px;
+            white-space:pre;
+        }
+        #background{
+            width:100px;
+            height: 100px;
+            background: url(border.png) 10px 10px no-repeat;
+            background-color:red;
+            background-size:50px 50px;
+        }
+        table,th,td{
+            border:1px solid red;
+        }
+        table{
+            width:400px;
+            border-collapse:collapse;
+        }
+        th{
+            height: 50px;
+            background: blue;
+        }
+        td{
+            height: 50px;
+            text-align:center;
+        }
+        a:link{
+            background: red;
+        }
+        a:visited{
+            background: darkblue;
+        }
+        a:hover{
+            background: darkgoldenrod;
+        }
+        a:active{
+            background: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+    </ul>
+    <div id="font">字体</div>
+    <div id="text">文本</div>
+    <div id="background">背景色</div>
+    <table>
+        <tr>
+            <th>head</th>
+            <th>head</th>
+            <th>head</th>
+        </tr>
+        <tr>
+            <td>con</td>
+            <td>con</td>
+            <td>con</td>
+        </tr>
+    </table>
+    <a href="https://baidu.com" target='_blank'>a伪类</a>
+</body>
+</html>

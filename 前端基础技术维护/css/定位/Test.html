@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+        <meta http-equiv='U-XA-Compatible' content='ie=edge,chrome=1'>
+        <title>定位测试</title>
+        <style type='text/css'>
+            #box{
+                width:100px;
+                height: 100px;
+                background: red;
+                position:fixed;
+                top:400px;
+                left:100px;
+            }
+            #box2{
+                width:200px;
+                height: 200px;
+                background: darkblue;
+                position:relative;
+                top:100px;
+                left:100px;
+            }
+            #box3{
+                width:100px;
+                height: 100px;
+                background: darkgoldenrod;
+                position:absolute;
+                top:50px;
+                left:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>z-index 默认值为auto,z轴上后渲染的会覆盖 先渲染的，改变z-index 的值，值大的会覆盖值小的</h2>
+        <div id="box">
+
+        </div>
+        <div id="box2">
+            <div id="box3">
+
+            </div>
+        </div>
+    </body>
+</html>

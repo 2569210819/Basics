@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类选择器</title>
+    <style type='text/css'>
+        .box{
+            color:red;
+            font-size:60px;
+        }
+        h2.box{
+            font-size:50px;
+        }
+        .box2{
+            font-style:italic;
+        }
+        .box.box2{
+            font-size:70px;
+        }
+    </style>
+</head>
+<body>
+    <h2>class 分单类和多类 类和标签结合使用 class里可以村子多个类  同时有多个类的class可以单独匹配到（看实例）</h2>
+    <div class="box">div</div>
+    <h2 class="box">h2</h2>
+    <div class="box box2">box,box2</div>
+</body>
+</html>
