@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景</title>
+    <style type='text/css'>
+        div{
+            width:100px;
+            height: 100px;
+            border:5px solid #ccc;
+            padding: 5px;
+            background:url(border.png) no-repeat;
+            background-color: red;
+            background-size:50px 50px;
+            background-origin:border-box;
+            background-clip:content-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>background-origin 背景覆盖的区域 border-box(覆盖到边框) padding-box(覆盖到填充区) content-box(覆盖到内容区)</h2>
+    <h2>background-size   背景的尺寸</h2>
+    <h2>background-clip   规定背景绘制的区域(和origin不冲突，origin定位，clip允许显示的背景)</h2>
+    <div>
+
+    </div>
+</body>
+</html>
