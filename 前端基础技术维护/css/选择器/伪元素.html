@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪元素</title>
+    <style type='text/css'>
+        p{
+            width:100px;
+        }
+        p:first-line{
+            color:red;
+        }
+        p:first-letter{
+            font-size:50px;
+        }
+        p:before{
+            content:'前面';
+        }
+        p:after{
+            content:'后面';
+        }
+        #box{
+            background: blue;
+            padding: 10px;
+        }
+        #box:before{
+            content:'';
+            display: block;
+            clear:both;
+        }
+        #box:after{
+            content:'';
+            display: block;
+            clear:both;
+        }
+        #box div{
+            width:100px;
+            height:100px;
+            float: left;
+            background: red;   
+        }
+    </style>
+</head>
+<body>
+    <h2>:first-line :first-letter :before :after  before after 常用于清除浮动(转换成块状元素后用clear清除浮动) 和 做一些特殊的效果(三角号)</h2>
+    <p>cc</br>sdf</p>
+    <div id='box'>
+        <div>
+            浮动元素
+        </div>
+    </div>
+    <div>
+        box后面元素
+    </div>
+</body>
+</html>

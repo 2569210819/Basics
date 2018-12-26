@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性选择器</title>
+    <style type='text/css'>
+        [href]{
+            color:red;
+        }
+        [title]{
+            color:rgb(0, 119, 255);
+        }
+        div[title]{
+            text-decoration:line-through;
+        }
+        [href][title]{
+            font-size:60px;
+        }
+    </style>
+</head> 
+<body>
+    <h2>[a] 匹配拥有a属性的元素 div[a] 匹配拥有a属性的div  [a][b]匹配同时拥有a和b属性的元素</h2>
+    <a href="https://baidu.com" target='_blank'>百度一下</a>
+    <div title='div'>div</div>
+    <a href="https://baidu.com" target='_blank' title='百度一下2'>百度一下2</a>
+</body> 
+</html>

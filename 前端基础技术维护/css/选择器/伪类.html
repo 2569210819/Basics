@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪类</title>
+    <style type='text/css'>
+        a{
+            text-decoration:none;
+        }
+        a:link{
+            color:red;
+        }
+        a:visited{
+            color:blue;
+        }
+        a:hover{
+            color:yellow;
+        }
+        a:active{
+            color:aqua;
+        }
+        input{
+            border:none;
+        }
+        input:focus{
+            outline: none;
+            border:10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS 伪类用于向某些选择器添加特殊的效果。</h2>
+    <h2>a标签的四种伪类 :focus :lang</h2>
+    <a href="https://baidu.com" target="_blank">百度一下</a>
+    <input type="text" placeholder='请输入内容'>
+</body>
+</html>
