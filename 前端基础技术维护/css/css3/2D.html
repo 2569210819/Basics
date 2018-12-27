@@ -6,10 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>2D</title>
     <style type='text/css'>
-    
+        #box{
+            width:100px;
+            height: 100px;
+            background: red;
+            transform:translate(10px, 10px)
+        }
+        #box2{
+            width:100px;
+            height: 100px;
+            margin-top: 40px;
+            background: red;
+            transform:rotate(30deg)
+        }
+        #box3{
+            width:100px;
+            height: 100px;
+            background: red;
+            margin-top: 100px;
+            margin-left: 200px;
+            transform:scale(2,4)
+        }
+        #box4{
+            width:100px;
+            height: 100px;
+            background: red;
+            margin-top: 100px;
+            transform: skew(30deg,30deg)
+        }
     </style>
 </head>
 <body>
     <h2>2D</h2>
+    <div id="box">translate(x,y) 移动 移动x,y</div>
+    <div id="box2">rotate(X deg) 旋转 顺时针旋转 X 度</div>
+    <div id="box3">scale(x,y) 放大 宽变为原来的x倍，高度为原来的y倍 (内容也会变大)</div>
+    <div id="box4">skew(x,y) 拉伸(倾斜) x轴发拉伸x度，y轴拉伸y度</div>
 </body>
 </html>
