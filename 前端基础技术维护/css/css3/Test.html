@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <style type='text/css'>
+        #box,#box2,#box3,#box4,#box5,#box6,#box7,#box8,#box9,#box10{
+            width:100px;
+            height: 100px;
+            background: red;
+            margin-top: 20px;
+        }
+        #box{
+            transform:translate(10px,10px);
+        }
+        #box2{
+            transform:rotate(60deg);
+        }
+        #box3{
+            transform:scale(0.5,0.5)
+        }
+        #box4{
+            transform:skew(60deg,60deg)
+        }
+        #box5{
+            
+        }
+        @keyframes move{
+            0%{
+                background: burlywood;
+            }
+            100%{
+                width:200px;
+                height: 200px;
+                background: darkgreen;
+            }
+        }
+        .move{
+            animation:move 3s;
+        }
+        #box6{
+            border:2px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #box7{
+            text-shadow: 0 3px 2px #ccc;
+        }
+        #box8{
+            
+        }
+        #box9{
+            border-radius: 5px;
+            box-shadow: 0 5px 5px blue;
+        }
+        #box10{
+            transition:width 2s;
+        }
+        #box10:hover{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 2D 移动 旋转 放大 拉伸-->
+    <div id="box"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <!-- 动画 -->
+    <div id="box5"></div>
+    <button onclick="keyframs()">动画</button>
+    <button onclick="remove()">清除动画</button>
+    <script type='text/javascript'>
+        function keyframs(){
+            document.getElementById('box5').classList.add('move');
+        }
+        function remove(){
+            document.getElementById('box5').classList.remove('move');
+        }
+    </script>
+    <!--改变盒模型 -->
+    <div id="box6"></div>
+    <!-- 文本效果 文字阴影-->
+    <div id="box7">文字阴影</div>
+    <!-- 背景 -->
+    <div id="box8"></div>
+    <!-- 边框 -->
+    <div id='box9'></div>
+    <!-- 过渡 -->
+    <div id="box10"></div>
+</body>
+</html>
