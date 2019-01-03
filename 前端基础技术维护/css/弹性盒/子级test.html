@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>子级flex</title>
+    <style type='text/css'>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:200px;
+            height: 200px;
+            border:1px solid #ccc;
+            display:flex;
+        }
+        #box div{
+            height: 100px;
+        }
+        #box div:nth-child(1){
+            width:100px;
+            background: darkgreen;
+        }
+        #box div:nth-child(2){
+            flex:1;
+            background: darkgoldenrod;
+        }
+        #box div:nth-child(3){
+            width:50px;
+            background: darkblue;
+        }
+        #box div:nth-child(4){
+            flex:1;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
